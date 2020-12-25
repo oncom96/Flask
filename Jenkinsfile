@@ -18,7 +18,7 @@ pipeline {
                         echo 'app.py'   
          }
     }
-         stage ('blah') {
+         stage ('Time') {
         def get_current_time_date = {
             return 'hoge'
         }
