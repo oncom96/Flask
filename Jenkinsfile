@@ -13,10 +13,21 @@ pipeline {
       
             }
         }
-                stage('Deploy') {
+               stage('Deploy') {
                     steps {
                         echo 'app.py'   
-            }
+         }
     }
-         
+             post {
+                success {
+                    echo 'Build success'
+                        sh 'curl -d "chat_id=-492035825&text=Build success" https://api.telegram.org/bot<token>/sendMessage'
+        }
+        
+        failure {
+            echo 'Build failure'
+            sh 'curl -d "chat_id=-492035825&text=Build failure" https://api.telegram.org/bot<token>/sendMessage'
+        }
+    }
+}
         
