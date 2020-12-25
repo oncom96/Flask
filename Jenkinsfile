@@ -18,6 +18,14 @@ pipeline {
                         echo 'app.py'   
          }
     }
+         stage ('blah') {
+        def get_current_time_date = {
+            return 'hoge'
+        }
+
+        echo get_current_time_date()
+    }
+}
              post {
                 success {
                     echo 'Build success'
