@@ -12,12 +12,7 @@ pipeline {
                 echo 'app.py'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'app.py'
-            }
-        }
-        stage(‘Push Notification’) {
+        stage('TelegramBot') {
             steps {
                 script{
                     withCredentials([string(credentialsId: ‘telegramToken’, variable: ‘1265469405:AAEYEBfgXQcY5iARmLmp6Hgw1wzHBHw0xkk’),
@@ -29,5 +24,11 @@ pipeline {
                                         <b>Build </b> : OK \
                                             <b>Test suite</b> = Passed”
             }
+        }
+                stage('Deploy') {
+                    steps {
+                        echo 'app.py'   
+            }
     }
-            
+         
+        
