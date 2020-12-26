@@ -24,9 +24,9 @@ pipeline {
                         telegramSend(meassage:'${PROJECT_NAME}:${BUILD_STATUS}-${GIT_COMMIT}', chatId: ${https://api.telegram.org/bot1265469405:AAEYEBfgXQcY5iARmLmp6Hgw1wzHBHw0xkk/sendMessage?chat_id=492035825&text=Build failure})
         }
         
-  //      failure {
-    //        echo 'Build failure'
-      //      sh "chat_id=-492035825&text=Build success" 'curl -d '
+        failure {
+            echo 'Build failure'
+           sh "chat_id=-492035825&text=Build success" 'curl -d '
         }
     }
 }
