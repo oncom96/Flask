@@ -16,15 +16,7 @@ pipeline {
                stage('Deploy') {
                     steps {
                         echo 'app.py'   
-         }
-    }
-         stage ('Time') {
-        def get_current_time_date = {
-            return 'hoge'
-        }
-
-        echo get_current_time_date()
-    }
+     }
 }
              post {
                 success {
