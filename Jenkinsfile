@@ -28,7 +28,7 @@ post {
         
         failure {
             echo 'Build Automation'
-            sh 'curl -d "chat_id=-292740675&text=Build Automations" https://api.telegram.org/bot1373771575:AAGWzfodFfnQH5pWuNMEzWoiUZ3JloBnhEI/sendMessage?chat_id=-292740675&text=Success'
+            sh 'curl -d "chat_id=-292740675&text=Build Success" https://api.telegram.org/bot1373771575:AAGWzfodFfnQH5pWuNMEzWoiUZ3JloBnhEI/sendMessage?chat_id=-292740675&text=Success'
         }
     }
 }
