@@ -1,22 +1,20 @@
 pipeline {
-    agent { docker { image 'Python:3.8.5' } }
+    agent any
 
     stages {
         stage('Build') {
             steps {
-                sh 'python3 -V'
+                echo 'app.py'
             }
         }
         stage('Test') {
             steps {
                 echo 'app.py'
-                sh 'curl -d app.py'
-      
             }
         }
                stage('Deploy') {
                     steps {
-                        sh 'python3 -V'
+                        echo 'app.py'
          }
      }
 }
