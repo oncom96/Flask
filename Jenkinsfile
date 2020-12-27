@@ -15,19 +15,20 @@ pipeline {
         }
                stage('Deploy') {
                     steps {
-                        echo 'app.py'   
+                        echo 'app.py'
+         }
      }
 }
-           //  post {
-             //   success {
-               //     echo 'Build success'
-                 //       telegramSend(meassage:'${PROJECT_NAME}:${BUILD_STATUS}-${GIT_COMMIT}', chatId: ${https://api.telegram.org/bot1265469405:AAEYEBfgXQcY5iARmLmp6Hgw1wzHBHw0xkk/sendMessage?chat_id=492035825&text=Build failure})
-      //  }
+
+post {
+        success {
+            echo 'Build success'
+            sh 'curl -d "chat_id=-292740675&text=Build success" https://api.telegram.org/bot1373771575:AAGWzfodFfnQH5pWuNMEzWoiUZ3JloBnhEI/sendMessage?chat_id=-292740675&text=Build'
+        }
         
-        //failure {
-          //  echo 'Build failure'
-           //sh "chat_id=-492035825&text=Build success" 'curl -d '
-        //}
-    //}
-//}
-    
+        failure {
+            echo 'Build Automation'
+            sh 'curl -d "chat_id=-292740675&text=Build Automations" https://api.telegram.org/bot1373771575:AAGWzfodFfnQH5pWuNMEzWoiUZ3JloBnhEI/sendMessage?chat_id=-292740675&text=Success'
+        }
+    }
+}
